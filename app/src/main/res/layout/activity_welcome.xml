@@ -12,5 +12,15 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_github" />
+    <TextView
+        android:id="@+id/wel_skip"
+        android:background="#070"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:textColor="@android:color/white"
+        android:text="GitHub"/>
 
 </RelativeLayout>
