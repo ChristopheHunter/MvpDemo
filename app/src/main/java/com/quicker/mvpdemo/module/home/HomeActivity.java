@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.quicker.mvpdemo.R;
+import com.quicker.mvpdemo.module.base.BaseActivity;
 import com.quicker.mvpdemo.module.test.Circle;
 import com.quicker.mvpdemo.module.test.MyCanvas;
 import com.quicker.mvpdemo.module.test.Rectangle;
@@ -15,34 +16,55 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        MyCanvas myCanvas = new MyCanvas();
-        Circle circle1 = new Circle();
-        Circle circle2 = new Circle();
-        Circle circle3 = new Circle();
-        Rectangle rectangle = new Rectangle();
-//        myCanvas.draw(circle);
-//        myCanvas.draw(rectangle);
-
-        List<Circle> shapes = new ArrayList<>();
-        shapes.add(circle1);
-        shapes.add(circle2);
-        shapes.add(circle3);
-        myCanvas.drawAll(shapes);
-
-        Integer[] array = new Integer[]{1,2,3,4};
-        List<Integer> list = new ArrayList<>();
-
-        Collection<?> collection = myCanvas.fromArrayToCollection(array,list);
-        for (Object o : collection){
-            Integer integer = (Integer) o;
-            Log.d("fanxing","_____"+integer);
-        }
+    protected int attachLayoutRes() {
+        return R.layout.activity_home;
     }
 
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void updateViews(boolean isRefresh) {
+
+    }
+
+    @Override
+    protected void initInjecter() {
+
+    }
+
+
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_home);
+//        MyCanvas myCanvas = new MyCanvas();
+//        Circle circle1 = new Circle();
+//        Circle circle2 = new Circle();
+//        Circle circle3 = new Circle();
+//        Rectangle rectangle = new Rectangle();
+////        myCanvas.draw(circle);
+////        myCanvas.draw(rectangle);
+//
+//        List<Circle> shapes = new ArrayList<>();
+//        shapes.add(circle1);
+//        shapes.add(circle2);
+//        shapes.add(circle3);
+//        myCanvas.drawAll(shapes);
+//
+//        Integer[] array = new Integer[]{1,2,3,4};
+//        List<Integer> list = new ArrayList<>();
+//
+//        Collection<?> collection = myCanvas.fromArrayToCollection(array,list);
+//        for (Object o : collection){
+//            Integer integer = (Integer) o;
+//            Log.d("fanxing","_____"+integer);
+//        }
+//    }
 }

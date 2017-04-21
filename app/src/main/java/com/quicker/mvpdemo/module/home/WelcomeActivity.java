@@ -23,12 +23,7 @@ public class WelcomeActivity extends BaseActivity {
         _doSkip();
     }
 
-    @OnClick(R.id.welcomeBg)
-    public void toHomeActivity(View view) {
-        startActivity(new Intent(this, HomeActivity.class));
-    }
-
-    @BindView(R.id.testTv)
+    @BindView(R.id.wel_skip)
     TextView testTv;
 
     private boolean mIsSkip = false;
@@ -53,7 +48,7 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void updateViews(boolean isRefresh) {
-        RxHelper.countdown(5)
+        RxHelper.countdown(3)
                 .compose(this.<Integer>bindToLife())
                 .subscribe(new Subscriber<Integer>() {
 
@@ -73,7 +68,6 @@ public class WelcomeActivity extends BaseActivity {
                     }
                 });
     }
-
 
     @Override
     protected void initInjecter() {
